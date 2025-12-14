@@ -63,40 +63,41 @@
     </p>
     <div class="heart">💗💗💗</div>
     <footer>
-      always cheering for you 🌷(tap anywhere 💗)
+      always cheering for you 🌷 (tap anywhere 💗)
     </footer>
   </div>
-<!-- YouTube API -->
-<script src="https://www.youtube.com/iframe_api"></script>
 
-<script>
-  let player;
-  let started = false;
+  <!-- YouTube API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
 
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('bgm', {
-      height: '0',
-      width: '0',
-      videoId: 'Wp2NMRS5TAo', // Samjhawan instrumental
-      playerVars: {
-        autoplay: 0,
-        loop: 1,
-        playlist: 'Wp2NMRS5TAo',
-        controls: 0,
-        enablejsapi: 1
+  <script>
+    let player;
+    let started = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('bgm', {
+        height: '0',
+        width: '0',
+        videoId: 'H2f7MZaw3Yo', // NEW MUSIC
+        playerVars: {
+          autoplay: 0,
+          loop: 1,
+          playlist: 'H2f7MZaw3Yo',
+          controls: 0,
+          enablejsapi: 1
+        }
+      });
+    }
+
+    document.addEventListener("click", function () {
+      if (!started && player) {
+        player.setVolume(15); // soft volume
+        player.playVideo();
+        started = true;
       }
     });
-  }
+  </script>
 
-  document.addEventListener("click", function () {
-    if (!started && player) {
-      player.setVolume(15); // soft volume
-      player.playVideo();
-      started = true;
-    }
-  });
-</script>
-  
 </body>
 </html>
 
