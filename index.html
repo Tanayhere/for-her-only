@@ -5,14 +5,6 @@
   <title>For You 💕</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    <iframe
-  width="0"
-  height="0"
-  src="https://www.youtube.com/embed/Wp2NMRS5TAo?autoplay=1&loop=1&playlist=Wp2NMRS5TAo&controls=0&modestbranding=1"
-  frameborder="0"
-  allow="autoplay"
-></iframe>
-
     body {
       margin: 0;
       min-height: 100vh;
@@ -55,7 +47,12 @@
     }
   </style>
 </head>
+
 <body>
+
+  <!-- Music (hidden) -->
+  <div id="bgm"></div>
+
   <div class="card">
     <h1>Hey bbg 💕</h1>
     <div class="cats">🐱🐾🐱</div>
@@ -69,5 +66,32 @@
       always cheering for you 🌷
     </footer>
   </div>
+
+  <!-- YouTube API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script>
+    function onYouTubeIframeAPIReady() {
+      new YT.Player('bgm', {
+        height: '0',
+        width: '0',
+        videoId: 'Wp2NMRS5TAo', // Samjhawan instrumental
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          playlist: 'Wp2NMRS5TAo',
+          controls: 0
+        },
+        events: {
+          onReady: function (event) {
+            event.target.setVolume(15); // soft volume
+            event.target.playVideo();
+          }
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
+
